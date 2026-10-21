@@ -4,7 +4,10 @@ LOCAL_ACTIONS = {"left", "right", "wait"}
 
 
 def validate_action(action: str) -> str:
-    # TODO: raise ValueError for an action outside LOCAL_ACTIONS.
+    if action not in LOCAL_ACTIONS:
+        raise ValueError(
+            f"Invalid action: {action!r}. Expected one of: {sorted(LOCAL_ACTIONS)}"
+        )
     return action
 
 
