@@ -10,7 +10,19 @@ replay = {
     "production_compatibility": "NOT VUACOC PRODUCTION FORMAT",
     "turns": [],
 }
-# TODO: tạo thư mục cha trước khi ghi file.
-# TODO: lưu replay với ensure_ascii=False và indent=2.
-# TODO: tải lại và kiểm tra cả hai nhãn trước khi đọc turns.
+
+# Tạo thư mục cha trước khi ghi file
+path.parent.mkdir(parents=True, exist_ok=True)
+
+# Lưu replay với ensure_ascii=False và indent=2
+with path.open("w", encoding="utf-8") as file:
+    json.dump(replay, file, ensure_ascii=False, indent=2)
+
+# Tải lại và kiểm tra cả hai nhãn trước khi đọc turns
+with path.open("r", encoding="utf-8") as file:
+    loaded = json.load(file)
+
+if loaded.get("format") == "COURSE LOCAL FORMAT" and loaded.get("production_compatibility") == "NOT VUACOC PRODUCTION FORMAT":
+    print(loaded["turns"])
+
 print(json.__name__, path, replay)
