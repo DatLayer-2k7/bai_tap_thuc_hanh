@@ -2,8 +2,9 @@
 
 
 def distance(position: int, goal: int) -> int:
-    # TODO: reproduce with (1, 4), fix the subtraction and retain an assertion.
-    return position - goal
+    # Reproduce the defect with (1, 4): old code returned a negative value.
+    assert position <= goal, "position must be less than or equal to goal"
+    return goal - position
 
 
 print(distance(1, 4))
