@@ -2,7 +2,13 @@
 
 > **Python cơ bản theo hướng học qua làm — từ zero đến một chương trình có thể kiểm chứng.**
 
-![Python Journey](assets/banner.png)
+<p align="center">
+  <img
+    src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif"
+    alt="Minh họa lập trình — Python Journey"
+    width="640"
+  />
+</p>
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-22c55e?style=flat-square)](LICENSE)
