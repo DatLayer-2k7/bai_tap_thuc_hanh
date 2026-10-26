@@ -1,12 +1,25 @@
 """Exercise 01: imports, modules and main guard."""
 
-# TODO: import choose_action từ bot_course.core.
-from bot_course.core import choose_action
-# TODO: chỉ gọi function bên trong main().
+import sys
+from pathlib import Path
+
+# Đảm bảo import được package bot_course từ thư mục tuần 13
+WEEK_ROOT = Path(__file__).resolve().parents[1]
+if str(WEEK_ROOT) not in sys.path:
+    sys.path.insert(0, str(WEEK_ROOT))
+
+# 1. Import choose_action từ bot_course.core
+from bot_course.core import choose_action  # noqa: E402
+
+
 def main() -> None:
-    """Call the bot decision function from inside the main entry point."""
-    result = choose_action(1, 4)
-    print(result)
-# TODO: thêm guard if __name__ == "__main__".
+    """2. Chỉ gọi function bên trong main()."""
+    position = 1
+    goal = 4
+    action = choose_action(position, goal)
+    print(f"Vị trí: {position}, Đích: {goal} -> Hành động: {action}")
+
+
+# 3. Guard if __name__ == "__main__"
 if __name__ == "__main__":
     main()
